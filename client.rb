@@ -71,6 +71,7 @@ class MyWebSocket
       end
     end
     @driver.on(:message) do |event|
+      puts "WS=>#{event.data}"
       handle_on_message(event.data)
     end
   end
@@ -165,7 +166,7 @@ end
 
 ws = create('ws://localhost:5001/hoge')
 
-sync = true # これをfalseにすると問題が起きる
+sync = false # これをfalseにすると問題が起きる
 
 if sync
   ws.on_message do |message|

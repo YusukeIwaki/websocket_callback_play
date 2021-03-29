@@ -165,7 +165,7 @@ end
 
 ws = create('ws://localhost:5001/hoge')
 
-sync = false # これをfalseにすると問題が起きる
+sync = true # これをfalseにすると問題が起きる
 
 if sync
   ws.on_message do |message|
